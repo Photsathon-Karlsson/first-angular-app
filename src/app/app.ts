@@ -1,4 +1,18 @@
 import { Component, signal } from '@angular/core';
+import { HeaderComponent } from './header.component';
+
+@Component({
+  selector: 'app-root',
+  imports: [HeaderComponent],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+  protected readonly title = signal('first-angular-app');
+}
+
+/* แบบเดิม
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -10,3 +24,4 @@ import { RouterOutlet } from '@angular/router';
 export class App {
   protected readonly title = signal('first-angular-app');
 }
+*/
