@@ -1,10 +1,16 @@
+/* User container */
 div {
-  width: 170px;
+  width: 220px;
 }
 
+/* User button */
 button {
   width: 100%;
-  padding: 0.6rem 1rem;
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
   border: none;
   border-radius: 6px;
@@ -16,17 +22,22 @@ button {
   cursor: pointer;
 }
 
+/* User button when mouse hovers */
 button:hover {
   background: #1e043c;
 }
 
-span {
-  font-size: 0.9rem;
-}
-
+/* User profile image */
 img {
   width: 50px;
   height: 50px;
+
   object-fit: cover;
   border-radius: 50%;
+}
+
+/* User name */
+span {
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
