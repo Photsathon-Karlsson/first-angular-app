@@ -1,4 +1,25 @@
+div {
+  width: 170px;
+}
+
 button {
   width: 100%;
-  padding: 0.8rem 1rem;
+  padding: 0.6rem 1rem;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #0c0615;
+  color: white;
+
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1e043c;
+}
+
+span {
+  font-size: 0.9rem;
 }
