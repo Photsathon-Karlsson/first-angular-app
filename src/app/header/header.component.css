@@ -1,3 +1,4 @@
+/* Website header container */
 header {
   width: 90%;
   max-width: 700px;
@@ -18,17 +19,20 @@ header {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
+/* EasyTask logo */
 img {
   width: 70px;
   height: 70px;
   object-fit: contain;
 }
 
+/* EasyTask heading */
 h1 {
   margin: 0.5rem 0 0.25rem;
   font-size: 1.8rem;
 }
 
+/* Header description */
 p {
   margin: 0;
   color: #d8c9e8;
