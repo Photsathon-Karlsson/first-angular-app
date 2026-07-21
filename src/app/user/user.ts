@@ -11,16 +11,17 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length); // Creates a
 })
 
 export class User {
-  // Selects one random user from DUMMY_USERS
-  selectedUser = DUMMY_USERS[randomIndex]; 
+  // Selects the first user when the page loads
+  selectedUser = DUMMY_USERS[0];
 
-  // Creates and returns the image path
+  // Creates and returns the selected user's image path
   get imagePath() {
     return 'users/' + this.selectedUser.avatar;
   }
 
-  // Runs when the user button is clicked
+  // Selects a new random user when the button is clicked
   onSelectUser() {
-    console.log('Clicked!');
+    const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+    this.selectedUser = DUMMY_USERS[randomIndex];
   }
 }
