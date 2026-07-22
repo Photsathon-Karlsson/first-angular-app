@@ -1,8 +1,6 @@
 import { Component } from '@angular/core'; // Imports the Component feature from Angular
 import { DUMMY_USERS } from '../dummy-users'; // Imports the user data
 
-const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length); // Creates a random user index
-
 @Component({
   selector: 'app-user',        // The HTML tag used to show this component
   imports: [],                 // No other components are used here
