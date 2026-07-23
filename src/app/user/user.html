@@ -6,10 +6,11 @@
     <!-- Shows the selected user's image -->
     <img
       [src]="imagePath"
-      [alt]="selectedUser.name"
+      [alt]="selectedUser().name"
     />
 
     <!-- Shows the selected user's name -->
-    <span>{{ selectedUser.name }}</span>
+    <span>{{ selectedUser().name }}</span>
+
   </button>
 </div>
