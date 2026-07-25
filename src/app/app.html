@@ -1,10 +1,10 @@
 <app-header />
 
 <main>
-  <!-- Calls onSelectUser() when the user component is clicked -->
+  <!-- Calls onSelectUser() when the user component emits the select event -->
   <app-user
     [name]="selectedUser().name"
     [avatar]="selectedUser().avatar"
-    (click)="onSelectUser()"
+    (select)="onSelectUser()"
   />
 </main>

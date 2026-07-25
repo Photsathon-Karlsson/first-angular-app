@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core'; // Imports Component and input from Angular
+import { Component, input, output } from '@angular/core'; // Imports Component, input, and output from Angular
 
 @Component({
   selector: 'app-user',         // The HTML tag used to show this component
@@ -13,6 +13,14 @@ export class User {
 
   // Receives the required avatar filename from the parent component
   avatar = input.required<string>();
+
+  // Creates a custom event that notifies the parent component
+  select = output<void>();
+
+  // Sends the custom select event to the parent component
+  onSelectUser() {
+    this.select.emit();
+  }
 
   // Creates and returns the user's image path
   get imagePath() {
