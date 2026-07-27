@@ -4,11 +4,9 @@
   <!-- Groups the user and active user components -->
   <div class="user-layout">
 
-    <!-- Sends user data and receives the selected user ID -->
+    <!-- Sends the user object and receives the selected user ID -->
     <app-user
-      [id]="selectedUser().id"
-      [name]="selectedUser().name"
-      [avatar]="selectedUser().avatar"
+      [user]="selectedUser()"
       (select)="onSelectUser($event)"
     />
 
