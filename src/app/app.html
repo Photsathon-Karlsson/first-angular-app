@@ -1,19 +1,33 @@
 <app-header />
 
 <main>
-  <!-- Groups the user and active user components -->
+  <!-- Places the user list and selected user content side by side -->
   <div class="user-layout">
 
-    <!-- Sends the user object and receives the selected user ID -->
-    <app-user
-      [user]="selectedUser()"
-      (select)="onSelectUser($event)"
-    />
+    <!-- Contains all user components -->
+    <div class="users">
 
-    <!-- Sends the selected user name to the active user component -->
-    <app-active-user
-      [name]="selectedUser().name"
-    />
+      <!-- Creates one user component for each user -->
+      @for (user of users; track user.id) {
+        <!-- Sends the user object and receives the selected user ID -->
+        <app-user
+          [user]="user"
+          (select)="onSelectUser($event)"
+        />
+      }
+
+    </div>
+
+    <!-- Shows content only when a user is selected -->
+    @if (selectedUser; as user) {
+      <!-- Sends the selected user name to the active user component -->
+      <app-active-user
+        [name]="user.name"
+      />
+    } @else {
+      <!-- Shows a message before a user is selected -->
+      <p class="fallback">Please select a user.</p>
+    }
 
   </div>
 </main>

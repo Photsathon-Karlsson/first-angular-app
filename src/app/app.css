@@ -5,10 +5,29 @@ main {
   margin: 3rem auto;
 }
 
-/* Places the user and active user components side by side */
+/* Places the user list and selected user content side by side */
 .user-layout {
   display: grid;
   grid-template-columns: 220px 1fr;
   gap: 2rem;
   align-items: start;
+}
+
+/* Displays the users in a vertical list */
+.users {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Message shown before a user is selected */
+.fallback {
+  margin: 0;
+  padding: 1rem;
+
+  text-align: center;
+
+  color: #d8c9e8;
+  background-color: #1e043c;
+  border-radius: 8px;
 }
