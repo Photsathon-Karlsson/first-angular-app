@@ -20,8 +20,9 @@
 
     <!-- Shows tasks only when a user is selected -->
     @if (selectedUser; as user) {
-      <!-- Sends the selected user name to the tasks component -->
+      <!-- Sends the selected user ID and name to the tasks component -->
       <app-tasks
+        [userId]="user.id"
         [name]="user.name"
       />
     } @else {

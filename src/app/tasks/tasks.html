@@ -14,15 +14,13 @@
 
   <!-- Contains the task list -->
   <ul>
-    <!-- Displays a temporary task component -->
-    <li>
-      <app-task />
-    </li>
-
-    <!-- Displays another temporary task component -->
-    <li>
-      <app-task />
-    </li>
+    <!-- Creates one task component for each selected user task -->
+    @for (task of selectedUserTasks; track task.id) {
+      <li>
+        <!-- Sends the task object to the task component -->
+        <app-task [task]="task" />
+      </li>
+    }
   </ul>
 
 </section>
