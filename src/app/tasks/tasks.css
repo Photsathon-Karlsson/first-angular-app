@@ -1,0 +1,60 @@
+/* Main tasks section */
+#tasks {
+  padding: 1rem;
+
+  background-color: #3a076b;
+  border-radius: 8px;
+}
+
+/* Places the title and button side by side */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Selected user's task title */
+h2 {
+  margin: 0;
+
+  color: #f5f0fa;
+  font-size: 1.2rem;
+}
+
+/* Removes the default menu spacing */
+menu {
+  margin: 0;
+  padding: 0;
+}
+
+/* Add task button */
+button {
+  padding: 0.5rem 1rem;
+
+  color: white;
+  background-color: #9965dd;
+  border: none;
+  border-radius: 6px;
+
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Changes the button when the mouse is over it */
+button:hover {
+  background-color: #a979e4;
+}
+
+/* Removes the default list style */
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}

@@ -1,7 +1,7 @@
 <app-header />
 
 <main>
-  <!-- Places the user list and selected user content side by side -->
+  <!-- Places the user list and selected user tasks side by side -->
   <div class="user-layout">
 
     <!-- Contains all user components -->
@@ -18,10 +18,10 @@
 
     </div>
 
-    <!-- Shows content only when a user is selected -->
+    <!-- Shows tasks only when a user is selected -->
     @if (selectedUser; as user) {
-      <!-- Sends the selected user name to the active user component -->
-      <app-active-user
+      <!-- Sends the selected user name to the tasks component -->
+      <app-tasks
         [name]="user.name"
       />
     } @else {

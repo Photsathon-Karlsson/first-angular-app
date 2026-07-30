@@ -1,14 +1,14 @@
 import { Component, signal } from '@angular/core'; // Imports Component and signal from Angular
 import { HeaderComponent } from './header/header.component'; // Imports the header component
 import { User } from './user/user'; // Imports the user component
-import { ActiveUser } from './active-user/active-user'; // Imports the active user component
+import { Tasks } from './tasks/tasks'; // Imports the tasks component
 import { DUMMY_USERS } from './dummy-users'; // Imports the user data
 
 @Component({
-  selector: 'app-root',                         // The main application component
-  imports: [HeaderComponent, User, ActiveUser], // Makes the components available
-  templateUrl: './app.html',                    // Connects this component to its HTML file
-  styleUrl: './app.css'                         // Connects this component to its CSS file
+  selector: 'app-root',                    // The main application component
+  imports: [HeaderComponent, User, Tasks], // Makes the components available
+  templateUrl: './app.html',               // Connects this component to its HTML file
+  styleUrl: './app.css'                    // Connects this component to its CSS file
 })
 
 export class App {

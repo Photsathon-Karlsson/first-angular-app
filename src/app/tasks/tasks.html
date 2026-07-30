@@ -1,0 +1,28 @@
+<!-- Contains the tasks of the selected user -->
+<section id="tasks">
+
+  <!-- Displays the task section header -->
+  <header>
+    <!-- Shows the selected user's name -->
+    <h2>{{ name() }}'s Tasks</h2>
+
+    <!-- Contains the add task button -->
+    <menu>
+      <button>Add Task</button>
+    </menu>
+  </header>
+
+  <!-- Contains the task list -->
+  <ul>
+    <!-- Displays a temporary task component -->
+    <li>
+      <app-task />
+    </li>
+
+    <!-- Displays another temporary task component -->
+    <li>
+      <app-task />
+    </li>
+  </ul>
+
+</section>
