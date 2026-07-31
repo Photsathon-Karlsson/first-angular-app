@@ -1,5 +1,6 @@
+// Controls one task item
 import { Component, input } from '@angular/core'; // Imports Component and input from Angular
-import type { TaskData } from '../../dummy-tasks'; // Imports the task data type
+import type { TaskData } from './task.model'; // Imports the task data model
 
 @Component({
   selector: 'app-task',       // The HTML tag used to show this component

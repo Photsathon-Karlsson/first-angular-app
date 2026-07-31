@@ -1,7 +1,10 @@
-<!-- Contains the user button -->
+<!-- Displays one user button -->
 <div>
-  <!-- Calls onSelectUser() when the button is clicked -->
-  <button (click)="onSelectUser()">
+  <!-- Calls onSelectUser() and adds the selected class when active -->
+  <button
+    [class.selected]="selected()"
+    (click)="onSelectUser()"
+  >
 
     <!-- Shows the user's image -->
     <img

@@ -1,3 +1,5 @@
+/* Styles one user button */
+
 /* User container */
 div {
   width: 220px;
@@ -22,8 +24,9 @@ button {
   cursor: pointer;
 }
 
-/* User button when mouse hovers */
-button:hover {
+/* User button when selected or hovered */
+button:hover,
+button.selected {
   background: #1e043c;
 }
 

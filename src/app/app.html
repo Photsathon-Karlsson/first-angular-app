@@ -12,6 +12,7 @@
         <!-- Sends the user object and receives the selected user ID -->
         <app-user
           [user]="user"
+          [selected]="user.id === selectedUser?.id"
           (select)="onSelectUser($event)"
         />
       }

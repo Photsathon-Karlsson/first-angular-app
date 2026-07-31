@@ -1,11 +1,5 @@
-// Describes the structure of one task object
-export interface TaskData {
-  id: string;
-  userId: string;
-  title: string;
-  summary: string;
-  dueDate: string;
-}
+// Stores example task data for the application
+import type { TaskData } from './tasks/task/task.model'; // Imports the task data model
 
 // Contains the example task data
 export const DUMMY_TASKS: TaskData[] = [

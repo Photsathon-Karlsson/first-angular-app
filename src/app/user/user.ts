@@ -1,3 +1,4 @@
+// Controls one user button
 import { Component, input, output } from '@angular/core'; // Imports Component, input, and output from Angular
 
 // Defines the structure of a user object
@@ -17,6 +18,9 @@ type UserData = {
 export class User {
   // Receives the required user object from the parent component
   user = input.required<UserData>();
+
+  // Receives whether this user is currently selected
+  selected = input.required<boolean>();
 
   // Creates a custom event that sends the user ID to the parent component
   select = output<string>();
