@@ -1,3 +1,4 @@
+// Controls the task list and removes completed tasks
 import { Component, input } from '@angular/core'; // Imports Component and input from Angular
 import { Task } from './task/task'; // Imports the task component
 import { DUMMY_TASKS } from '../dummy-tasks'; // Imports the task data
@@ -10,6 +11,9 @@ import { DUMMY_TASKS } from '../dummy-tasks'; // Imports the task data
 })
 
 export class Tasks {
+  // Stores the task data that can be changed
+  private tasks = DUMMY_TASKS;
+
   // Receives the selected user ID from the parent component
   userId = input.required<string>();
 
@@ -18,8 +22,15 @@ export class Tasks {
 
   // Finds and returns the tasks of the selected user
   get selectedUserTasks() {
-    return DUMMY_TASKS.filter(
+    return this.tasks.filter(
       (task) => task.userId === this.userId()
+    );
+  }
+
+  // Removes the completed task from the task list
+  onCompleteTask(id: string) {
+    this.tasks = this.tasks.filter(
+      (task) => task.id !== id
     );
   }
 }

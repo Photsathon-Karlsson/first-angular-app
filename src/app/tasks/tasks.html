@@ -1,4 +1,4 @@
-<!-- Contains the tasks of the selected user -->
+<!-- Displays and manages the selected user's tasks -->
 <section id="tasks">
 
   <!-- Displays the task section header -->
@@ -17,8 +17,11 @@
     <!-- Creates one task component for each selected user task -->
     @for (task of selectedUserTasks; track task.id) {
       <li>
-        <!-- Sends the task object to the task component -->
-        <app-task [task]="task" />
+        <!-- Sends the task data and receives the completed task ID -->
+        <app-task
+          [task]="task"
+          (complete)="onCompleteTask($event)"
+        />
       </li>
     }
   </ul>

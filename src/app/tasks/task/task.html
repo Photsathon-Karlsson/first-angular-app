@@ -1,4 +1,4 @@
-<!-- Displays one task -->
+<!-- Displays one task and handles the Complete button -->
 <article>
   <!-- Shows the task title -->
   <h2>{{ task().title }}</h2>
@@ -11,6 +11,7 @@
 
   <!-- Contains the task action button -->
   <p class="actions">
-    <button>Complete</button>
+    <!-- Sends the task ID when the button is clicked -->
+    <button (click)="onCompleteTask()">Complete</button>
   </p>
 </article>
