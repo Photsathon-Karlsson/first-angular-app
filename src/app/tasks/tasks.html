@@ -1,4 +1,12 @@
 <!-- Displays and manages the selected user's tasks -->
+
+<!-- Shows the new task dialog when Add Task is clicked -->
+@if (isAddingTask) {
+  <app-new-task
+    (cancel)="onCancelAddTask()"
+  />
+}
+
 <section id="tasks">
 
   <!-- Displays the task section header -->
@@ -8,7 +16,10 @@
 
     <!-- Contains the add task button -->
     <menu>
-      <button>Add Task</button>
+      <!-- Opens the new task dialog -->
+      <button (click)="onStartAddTask()">
+        Add Task
+      </button>
     </menu>
   </header>
 

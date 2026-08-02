@@ -1,0 +1,119 @@
+/* Styles the new task dialog */
+
+/* Covers the page with a dark transparent background */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 10;
+}
+
+/* Styles and centers the dialog */
+dialog {
+  width: 90%;
+  max-width: 30rem;
+
+  position: fixed;
+  top: 5rem;
+  left: 50%;
+
+  padding: 1.5rem;
+
+  background-color: #d5c0f1;
+  border: none;
+  border-radius: 6px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+/* Styles the dialog title */
+h2 {
+  margin: 0;
+
+  color: #3a075f;
+}
+
+/* Adds space between the form fields */
+form p {
+  margin: 0.75rem 0;
+}
+
+/* Styles the form labels */
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+
+  color: #3c2c50;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Styles the form inputs */
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+
+  color: #3c2c50;
+  font: inherit;
+
+  background-color: #f3e8ff;
+  border: 1px solid #b89bd8;
+  border-radius: 4px;
+
+  box-sizing: border-box;
+}
+
+/* Allows the summary box to resize vertically */
+textarea {
+  resize: vertical;
+}
+
+/* Places the buttons on the right */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+/* Styles the dialog buttons */
+.actions button {
+  padding: 0.5rem 1.25rem;
+
+  color: #5c2a8a;
+  font: inherit;
+
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+/* Changes the Cancel button when hovered */
+.actions button:hover,
+.actions button:active {
+  color: #3a075f;
+  background-color: #cbb1e9;
+}
+
+/* Styles the Create button */
+.actions button[type='submit'] {
+  color: white;
+  background-color: #5f1b8f;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Changes the Create button when hovered */
+.actions button[type='submit']:hover,
+.actions button[type='submit']:active {
+  background-color: #4b1275;
+}
