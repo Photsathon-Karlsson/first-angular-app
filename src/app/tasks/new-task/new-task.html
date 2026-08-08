@@ -1,4 +1,4 @@
-<!-- Displays the new task dialog -->
+<!-- Displays the new task dialog and connects form inputs with TypeScript -->
 
 <!-- Closes the dialog when the background is clicked -->
 <div
@@ -22,6 +22,7 @@
         type="text"
         id="title"
         name="title"
+        [(ngModel)]="enteredTitle"
       />
     </p>
 
@@ -32,6 +33,7 @@
         id="summary"
         name="summary"
         rows="5"
+        [(ngModel)]="enteredSummary"
       ></textarea>
     </p>
 
@@ -42,6 +44,7 @@
         type="date"
         id="due-date"
         name="due-date"
+        [(ngModel)]="enteredDate"
       />
     </p>
 
