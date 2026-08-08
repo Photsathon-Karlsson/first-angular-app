@@ -1,5 +1,5 @@
-// Controls the new task dialog and stores form input values
-import { Component, output } from '@angular/core'; // Imports Component and output from Angular
+// Controls the new task dialog and stores form input values with signals
+import { Component, output, signal } from '@angular/core'; // Imports Component, output, and signal from Angular
 import { FormsModule } from '@angular/forms'; // Imports FormsModule to use ngModel
 
 @Component({
@@ -11,14 +11,14 @@ import { FormsModule } from '@angular/forms'; // Imports FormsModule to use ngMo
 })
 
 export class NewTask {
-  // Stores the entered task title
-  enteredTitle = '';
+  // Stores the entered task title as a signal
+  enteredTitle = signal('');
 
-  // Stores the entered task summary
-  enteredSummary = '';
+  // Stores the entered task summary as a signal
+  enteredSummary = signal('');
 
-  // Stores the entered task due date
-  enteredDate = '';
+  // Stores the entered task due date as a signal
+  enteredDate = signal('');
 
   // Sends a cancel event to the parent component
   cancel = output<void>();
