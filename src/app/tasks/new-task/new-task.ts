@@ -1,4 +1,4 @@
-// Controls the new task dialog and stores form input values with signals
+// For controlling the new task form and sending submitted task data
 import { Component, output, signal } from '@angular/core'; // Imports Component, output, and signal from Angular
 import { FormsModule } from '@angular/forms'; // Imports FormsModule to use ngModel
 
@@ -23,8 +23,24 @@ export class NewTask {
   // Sends a cancel event to the parent component
   cancel = output<void>();
 
+  // Sends the entered task data to the parent component
+  add = output<{
+    title: string;
+    summary: string;
+    date: string;
+  }>();
+
   // Sends the cancel event when the dialog is closed
   onCancel() {
     this.cancel.emit();
+  }
+
+  // Sends the entered task data when the form is submitted
+  onSubmit() {
+    this.add.emit({
+      title: this.enteredTitle(),
+      summary: this.enteredSummary(),
+      date: this.enteredDate()
+    });
   }
 }

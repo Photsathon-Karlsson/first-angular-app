@@ -1,4 +1,4 @@
-<!-- Displays the new task dialog and connects form inputs with TypeScript -->
+<!-- For displaying the new task form and handling form submission -->
 
 <!-- Closes the dialog when the background is clicked -->
 <div
@@ -12,8 +12,8 @@
   <!-- Displays the dialog title -->
   <h2>Add Task</h2>
 
-  <!-- Contains the task input fields -->
-  <form>
+  <!-- Submits the entered task data -->
+  <form (ngSubmit)="onSubmit()">
 
     <!-- Contains the task title input -->
     <p>
