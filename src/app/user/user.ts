@@ -1,5 +1,6 @@
 // Controls one user button
 import { Component, input, output } from '@angular/core'; // Imports Component, input, and output from Angular
+import { Card } from '../shared/card/card'; // Imports the reusable card component
 
 // Defines the structure of a user object
 type UserData = {
@@ -10,7 +11,7 @@ type UserData = {
 
 @Component({
   selector: 'app-user',         // The HTML tag used to show this component
-  imports: [],                  // No other components are used here
+  imports: [Card],              // Makes the card component available
   templateUrl: './user.html',   // Connects this component to its HTML file
   styleUrl: './user.css'        // Connects this component to its CSS file
 })

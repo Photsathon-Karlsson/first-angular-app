@@ -1,5 +1,6 @@
-<!-- Displays one user button -->
-<div>
+<!-- Displays one user button inside a reusable card -->
+<app-card>
+
   <!-- Calls onSelectUser() and adds the selected class when active -->
   <button
     [class.selected]="selected()"
@@ -16,4 +17,5 @@
     <span>{{ user().name }}</span>
 
   </button>
-</div>
+
+</app-card>

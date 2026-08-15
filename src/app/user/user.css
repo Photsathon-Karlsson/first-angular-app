@@ -1,7 +1,8 @@
 /* Styles one user button */
 
-/* User container */
-div {
+/* User component container */
+:host {
+  display: block;
   width: 220px;
 }
 
