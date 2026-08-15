@@ -1,10 +1,10 @@
-<!-- Displays one task and handles the Complete button -->
+<!-- Displays one task and formats the due date -->
 <article>
   <!-- Shows the task title -->
   <h2>{{ task().title }}</h2>
 
-  <!-- Shows the task due date -->
-  <time>{{ task().dueDate }}</time>
+  <!-- Shows the formatted task due date -->
+  <time>{{ task().dueDate | date }}</time>
 
   <!-- Shows the task summary -->
   <p>{{ task().summary }}</p>

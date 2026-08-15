@@ -1,10 +1,11 @@
-// Controls one task item and sends the completed task ID
+// Controls one task item and formats its displayed data
 import { Component, input, output } from '@angular/core'; // Imports Component, input, and output from Angular
+import { DatePipe } from '@angular/common'; // Imports DatePipe for formatting dates
 import type { TaskData } from './task.model'; // Imports the task data model
 
 @Component({
   selector: 'app-task',       // The HTML tag used to show this component
-  imports: [],                // No other components are used here
+  imports: [DatePipe],        // Makes DatePipe available in the template
   templateUrl: './task.html', // Connects this component to its HTML file
   styleUrl: './task.css'      // Connects this component to its CSS file
 })
