@@ -1,8 +1,8 @@
-// Controls the task list and the new task dialog
-import { Component, input } from '@angular/core'; // Imports Component and input from Angular
+// Controls the task list and uses the task service
+import { Component, inject, input } from '@angular/core'; // Imports Component, inject, and input from Angular
 import { Task } from './task/task'; // Imports the task component
 import { NewTask } from './new-task/new-task'; // Imports the new task component
-import { DUMMY_TASKS } from '../dummy-tasks'; // Imports the task data
+import { TasksService } from './tasks.service'; // Imports the task service
 
 @Component({
   selector: 'app-tasks',             // The HTML tag used to show this component
@@ -12,8 +12,8 @@ import { DUMMY_TASKS } from '../dummy-tasks'; // Imports the task data
 })
 
 export class Tasks {
-  // Stores the task data that can be changed
-  private tasks = DUMMY_TASKS;
+  // Gets the task service from Angular
+  private tasksService = inject(TasksService);
 
   // Controls whether the new task dialog is visible
   isAddingTask = false;
@@ -24,10 +24,10 @@ export class Tasks {
   // Receives the selected user name from the parent component
   name = input.required<string>();
 
-  // Finds and returns the tasks of the selected user
+  // Gets the tasks of the selected user from the service
   get selectedUserTasks() {
-    return this.tasks.filter(
-      (task) => task.userId === this.userId()
+    return this.tasksService.getUserTasks(
+      this.userId()
     );
   }
 
@@ -41,10 +41,22 @@ export class Tasks {
     this.isAddingTask = false;
   }
 
-  // Removes the completed task from the task list
-  onCompleteTask(id: string) {
-    this.tasks = this.tasks.filter(
-      (task) => task.id !== id
+  // Adds a new task through the task service
+  onAddTask(taskData: {
+    title: string;
+    summary: string;
+    date: string;
+  }) {
+    this.tasksService.addTask(
+      taskData,
+      this.userId()
     );
+
+    this.isAddingTask = false;
+  }
+
+  // Removes the completed task through the task service
+  onCompleteTask(id: string) {
+    this.tasksService.removeTask(id);
   }
 }
