@@ -1,7 +1,8 @@
-// Controls one task item and formats its displayed data
-import { Component, input, output } from '@angular/core'; // Imports Component, input, and output from Angular
+// Controls one task item and removes completed tasks
+import { Component, inject, input } from '@angular/core'; // Imports Component, inject, and input from Angular
 import { DatePipe } from '@angular/common'; // Imports DatePipe for formatting dates
 import type { TaskData } from './task.model'; // Imports the task data model
+import { TasksService } from '../tasks.service'; // Imports the task service
 
 @Component({
   selector: 'app-task',       // The HTML tag used to show this component
@@ -11,14 +12,14 @@ import type { TaskData } from './task.model'; // Imports the task data model
 })
 
 export class Task {
+  // Gets the task service from Angular
+  private tasksService = inject(TasksService);
+
   // Receives one task object from the parent component
   task = input.required<TaskData>();
 
-  // Sends the completed task ID to the parent component
-  complete = output<string>();
-
-  // Sends the current task ID when the Complete button is clicked
+  // Removes the current task when the Complete button is clicked
   onCompleteTask() {
-    this.complete.emit(this.task().id);
+    this.tasksService.removeTask(this.task().id);
   }
 }

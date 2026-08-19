@@ -54,9 +54,4 @@ export class Tasks {
 
     this.isAddingTask = false;
   }
-
-  // Removes the completed task through the task service
-  onCompleteTask(id: string) {
-    this.tasksService.removeTask(id);
-  }
 }

@@ -29,11 +29,8 @@
     <!-- Creates one task component for each selected user task -->
     @for (task of selectedUserTasks; track task.id) {
       <li>
-        <!-- Sends the task data and receives the completed task ID -->
-        <app-task
-          [task]="task"
-          (complete)="onCompleteTask($event)"
-        />
+        <!-- Sends one task to the task component -->
+        <app-task [task]="task" />
       </li>
     }
   </ul>
